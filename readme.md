@@ -33,3 +33,20 @@ Aqui estão alguns dos temas estudados:
 - Tuplas: tuplas como coleções imutáveis; manipulação de listas internas dentro de tuplas.
 
 - Boas práticas aplicadas: tratamento de erros com try/except, uso de f-strings, padronização de listas e dicionários, comentários explicativos para reforço do aprendizado.
+
+
+## 📝 Módulo 03 - Manipulação de Arquivos e Funções Avançadas
+
+- O terceiro módulo foca em técnicas de manipulação de arquivos e aprofundamento no uso de funções no Python.
+
+Aqui estão alguns dos temas estudados:
+
+- Funções: definição, parâmetros, retorno de valores, funções com múltiplos argumentos.
+
+- Tratamento de exceções: uso de try, except, finally para capturar e tratar erros de forma segura.
+
+- Leitura e escrita em arquivos: abrir arquivos em diferentes modos (r, w, a), leitura linha a linha, gravação de dados, fechamento automático de arquivos com with.
+
+- Exercícios práticos com arquivos: manipulação de arquivos de texto, registros estruturados, listas a partir de arquivos.
+
+- Boas práticas: documentação de funções, comentários explicativos, organização de código em módulos e reaproveitamento de funções em múltiplos exercícios.

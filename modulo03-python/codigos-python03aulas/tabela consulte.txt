@@ -1,0 +1,21 @@
+
+
+
+📝 Tabela de modos de open()
+
+
+| Modo    | Significado               | O que faz                             | Exemplo de uso               |
+| ------- | ------------------------- | ------------------------------------- | ---------------------------- |
+| `"r"`   | read (leitura)            | Abre para ler. Erro se não existir    | `open("arquivo.txt", "r")`   |
+| `"w"`   | write (escrita)           | Cria ou sobrescreve o arquivo         | `open("arquivo.txt", "w")`   |
+| `"a"`   | append (acrescentar)      | Adiciona no final do arquivo          | `open("arquivo.txt", "a")`   |
+| `"x"`   | exclusive creation        | Cria novo arquivo. Erro se já existir | `open("arquivo.txt", "x")`   |
+| `"b"`   | binary (binário)          | Lê/escreve em modo binário            | `open("imagem.jpg", "rb")`   |
+| `"t"`   | text (texto)              | Lê/escreve em modo texto (padrão)     | `open("arquivo.txt", "rt")`  |
+| `"r+"`  | leitura e escrita         | Lê e escreve. Não apaga arquivo       | `open("arquivo.txt", "r+")`  |
+| `"w+"`  | escrita e leitura         | Cria ou sobrescreve, e permite ler    | `open("arquivo.txt", "w+")`  |
+| `"a+"`  | acrescentar e leitura     | Acrescenta conteúdo e permite ler     | `open("arquivo.txt", "a+")`  |
+| `"rb"`  | leitura binária           | Lê arquivo em binário                 | `open("arquivo.jpg", "rb")`  |
+| `"wb"`  | escrita binária           | Cria/reescreve arquivo binário        | `open("arquivo.jpg", "wb")`  |
+| `"ab"`  | acrescentar binário       | Acrescenta no final em binário        | `open("arquivo.jpg", "ab")`  |
+| `"r+b"` | leitura e escrita binária | Lê e escreve em binário               | `open("arquivo.jpg", "r+b")` |
