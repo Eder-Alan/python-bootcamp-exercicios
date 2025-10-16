@@ -50,3 +50,45 @@ Aqui estão alguns dos temas estudados:
 - Exercícios práticos com arquivos: manipulação de arquivos de texto, registros estruturados, listas a partir de arquivos.
 
 - Boas práticas: documentação de funções, comentários explicativos, organização de código em módulos e reaproveitamento de funções em múltiplos exercícios.
+
+
+## 📝 Módulo 04 - Análise de Dados com Pandas
+
+Neste módulo, o foco foi aplicar os conceitos de análise de dados utilizando a biblioteca Pandas do Python.
+A proposta prática foi o desenvolvimento de um projeto para uma locadora de carros e vendas, com o objetivo de criar uma extratificação de dados.
+
+💡 Descrição do projeto
+
+A locadora forneceu uma base de dados contendo informações sobre montadoras, modelos e anos dos veículos.
+O desafio foi coletar, analisar e disponibilizar esses dados de forma estruturada, permitindo que o usuário pudesse:
+
+Selecionar uma montadora específica;
+
+Filtrar por modelo e ano;
+
+Receber um extrato analítico com base nessas informações.
+
+🧰 Ferramentas utilizadas
+
+Pandas: para leitura, manipulação e análise da base de dados.
+
+Google Colab: ambiente de desenvolvimento utilizado para implementação e testes do código.
+
+Trello: ferramenta empregada para organização e acompanhamento das etapas do projeto, facilitando a gestão das tarefas e a divisão de responsabilidades entre as fases.
+
+🎯 Objetivo
+
+Proporcionar uma experiência prática no uso do Pandas para análise de dados reais, desenvolvendo a capacidade de estruturar informações, aplicar filtros e gerar resultados úteis para a tomada de decisão em um contexto empresarial.
+
+## 💼 Atividade Extra (Projeto Pessoal)
+
+Como atividade complementar — desenvolvida por iniciativa própria — criei um dashboard interativo no Excel utilizando a base de dados original do projeto.
+O processo envolveu as seguintes etapas:
+
+Limpeza e tratamento dos dados para padronização e consistência das informações;
+
+Modelagem e estruturação dos dados tratados;
+
+Criação de um dashboard dinâmico, com gráficos e indicadores de desempenho, oferecendo uma visualização clara e intuitiva dos principais resultados da análise.
+
+Essa atividade reforçou o entendimento sobre preparação de dados e visualização de informações, além de demonstrar a integração entre ferramentas como Python, Pandas e Excel no contexto de análise de dados aplicada.
