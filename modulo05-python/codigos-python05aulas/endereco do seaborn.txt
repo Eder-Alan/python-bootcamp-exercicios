@@ -1,0 +1,6 @@
+para aprender sobre a sintaxe da biblioteca
+
+
+https://seaborn.pydata.org/
+
+https://seaborn.pydata.org/examples/index.html

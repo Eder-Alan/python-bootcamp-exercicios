@@ -1,0 +1,23 @@
+aulas 
+https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/compras.csv
+
+
+https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/compras2.csv
+
+
+https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/viagens.csv
+
+
+
+
+minha aula feita 
+https://colab.research.google.com/drive/1OreMVMi3w7vk_9a55lW8uVPazx3W3hqN?usp=sharing
+
+
+
+para aprender sobre a sintaxe da biblioteca
+https://www.gapminder.org/
+
+
+para aprender sobre a sintaxe da biblioteca
+https://plotly.com/python/

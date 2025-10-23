@@ -1,0 +1,8 @@
+
+
+para aprender sobre a sintaxe da biblioteca
+https://matplotlib.org/
+
+
+https://colab.research.google.com/drive/1Mp3IpTJDw4C6-pGsrZAgxRyYj_iGdvpG?usp=sharing
+

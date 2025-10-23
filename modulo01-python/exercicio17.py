@@ -12,3 +12,7 @@ var_contador = 5
 while(var_contador > 0):
     print(var_contador)
     var_contador -= 1
+
+print('------------')
+for x in range(5,0,-1):
+    print(x)
