@@ -1,4 +1,4 @@
-# Bootcamp Python - Exercícios
+# Bootcamp Python -Aulas e Exercícios
 
 Este repositório contém os exercícios que desenvolvi durante o **Bootcamp de Python**, organizados por módulos.  
 O objetivo é acompanhar minha evolução, praticar a linguagem e criar um portfólio que mostre minha jornada no aprendizado de programação.
