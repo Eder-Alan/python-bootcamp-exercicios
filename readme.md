@@ -92,3 +92,54 @@ Modelagem e estruturação dos dados tratados;
 Criação de um dashboard dinâmico, com gráficos e indicadores de desempenho, oferecendo uma visualização clara e intuitiva dos principais resultados da análise.
 
 Essa atividade reforçou o entendimento sobre preparação de dados e visualização de informações, além de demonstrar a integração entre ferramentas como Python, Pandas e Excel no contexto de análise de dados aplicada.
+
+
+## 📝 Módulo 05 - Visualização de Dados com Matplotlib, Plotly e Seaborn
+
+Neste módulo, o foco foi aprender a visualizar dados utilizando diferentes bibliotecas do Python, aplicando os conceitos de análise de dados em situações práticas.
+
+💡 Bibliotecas estudadas:
+
+Matplotlib: criação de gráficos de barra, pizza e linha; personalização de cores, bordas e grades; tratamento de dados nulos para visualizações precisas.
+
+Plotly: gráficos interativos para exploração de dados em dashboards.
+
+Seaborn: gráficos estatísticos com estilo refinado e fácil integração com Pandas.
+
+🧰 Atividades desenvolvidas:
+
+Atividade 1 (Vendas da Loja):
+
+Leitura e tratamento de valores nulos no dataset vendas_loja.csv (preenchimento com 0).
+
+Criação de gráficos com Matplotlib:
+
+Gráfico de barras: total de vendas por categoria.
+
+Gráfico de pizza: proporção de vendas por região.
+
+Gráfico de linhas: evolução das vendas ao longo dos meses.
+
+Objetivo: identificar categorias mais lucrativas, distribuição regional e tendências mensais de vendas.
+
+Atividade 2 (Pacientes da Clínica):
+
+Leitura e tratamento de valores nulos no dataset pacientes_clinica.csv (preenchimento com média para glicose e pressão).
+
+Criação de gráficos com Matplotlib:
+
+Gráfico de barras: média de glicose por faixa etária.
+
+Gráfico de pizza: proporção de pacientes por gênero.
+
+Gráfico de linhas: evolução média da pressão arterial por mês.
+
+Objetivo: compreender padrões de saúde por faixa etária, distribuição de gênero e tendências mensais na pressão arterial.
+
+🎯 Resultados e aprendizado:
+
+Aprendi a tratar dados nulos de forma estratégica para cada tipo de análise.
+
+Desenvolvi habilidade em criar gráficos informativos e esteticamente claros usando diferentes bibliotecas de visualização.
+
+Consolidei a prática de gerar insights a partir de dados reais, visualizando tendências e distribuições importantes.
