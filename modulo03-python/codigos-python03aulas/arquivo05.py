@@ -1,4 +1,4 @@
-# %%
+    # %%
 var_arquivo = 'arquivoteste.txt'
 # abrindo o arquivo, e se não houver ele cria um 
 # arquivo.
