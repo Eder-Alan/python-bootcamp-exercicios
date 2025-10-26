@@ -296,10 +296,8 @@ separador()
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Lê um arquivo CSV diretamente de uma URL usando Pandas
 # sep=';' → define que o separador de colunas no arquivo é ponto e vírgula
-df = pd.read_csv(
-    'https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/alunos_cursos.csv',
-    sep=';'
-)
+caminho1 = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas/alunos_cursos.csv')
+df = pd.read_csv(caminho1, sep=';')
 
 # Cria um gráfico de contagem (count plot) usando Seaborn
 # x='Curso' → eixo X com os nomes dos cursos presentes na coluna 'Curso'

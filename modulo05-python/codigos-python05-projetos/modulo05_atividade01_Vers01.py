@@ -31,8 +31,8 @@ def separador():
     print('=-'* 36)
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-
-df1 = pd.read_csv('https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/vendas_loja.csv')
+caminho = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas/vendas_loja.csv')
+df1 = pd.read_csv(caminho)
 
 # Verificando os dados.
 

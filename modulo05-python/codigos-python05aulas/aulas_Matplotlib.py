@@ -44,7 +44,7 @@ def separador():
 # O parâmetro sep=';' indica que o separador usado é ponto e vírgula.
 # O resultado é armazenado no DataFrame df.
 # importando pelo python
-caminho = ('C:\\Users\\user\\pythonProject\\Educ360\\alunos_cursos.csv')
+caminho = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas\alunos_cursos.csv')
 # importante informar o separador ; ao ler o CSV:
 df = pd.read_csv(caminho,sep=';')
 #df = pd.read_csv('https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/alunos_cursos.csv', sep=';')

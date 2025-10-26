@@ -49,8 +49,8 @@ separador()
 print(f'{"Inicio da aula 02 - Ploty-Grafico_linhas_CSV-Gapminder":^50}')
 separador()
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-df = pd.read_csv(r'/gapminder2007.csv')
+caminho1 = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas\gapminder2007.csv')
+df = pd.read_csv(caminho1)
 
 print('Imprimindo dados na tela')
 print(df)
@@ -132,7 +132,8 @@ print(f'{"Inicio da aula 03 - Ploty-Grafico_linhas_CSV_ivan":^50}')
 separador()
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-df = pd.read_csv(r'/viagens.csv', sep=';')
+caminho = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas\viagens.csv')
+df = pd.read_csv(caminho, sep=';')
 print(df)
 separador()
 
@@ -178,7 +179,8 @@ print(f'{"Inicio da aula 04 - Ploty-Grafico_barras":^50}')
 separador()
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-df = pd.read_csv(r'/compras.csv', sep=';')
+caminho2 = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas/compras.csv')
+df = pd.read_csv(caminho2, sep=';')
 print(df)
 
 print('Imprimindo os primeiros 05 dados na tela')

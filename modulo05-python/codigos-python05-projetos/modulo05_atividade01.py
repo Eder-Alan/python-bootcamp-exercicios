@@ -39,7 +39,8 @@ def separador():
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 # lê um arquivo CSV hospedado no GitHub.
-df = pd.read_csv('https://raw.githubusercontent.com/profivan-ai/cdb-Python/refs/heads/main/arquivos/vendas_loja.csv')
+caminho = (r'C:\Users\user\pythonProject\Educ360\codigos-python05aulas/vendas_loja.csv')
+df = pd.read_csv(caminho)
 
 # fazendo as Análises básicas.
 print('Imprimindo o data frame')
@@ -106,78 +107,44 @@ separador()
 # Agrupando e somando vendas por categoria
 vendas_categoria = df.groupby('Categoria')['Vendas'].sum()
 
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Gráfico de Barras
-print('Gráfico de Barras')  # informa que o próximo gráfico é de barras
-plt.figure(figsize=(7,4))  # define o tamanho da figura
-# Cria gráfico de barras do total de vendas por categoria
-plt.bar(
-    vendas_categoria.index,    # categorias no eixo X
-    vendas_categoria.values,   # valores no eixo Y
-    color='skyblue'            # cor das barras
-)
-plt.title('Total de Vendas por Categoria')  # título do gráfico
-plt.xlabel('Categoria')                      # rótulo do eixo X
-plt.ylabel('Vendas R$')                       # rótulo do eixo Y
+print('Gráfico de Barras')
+plt.figure(figsize=(7,4))
+plt.bar(vendas_categoria.index, vendas_categoria.values, color='skyblue')
+plt.title('Total de Vendas por Categoria')
+plt.xlabel('Categoria')
+plt.ylabel('Vendas R$')
+#plt.xticks(rotation=45) # ou com rotação de 45° neste caso ficou sem rotação
+plt.tight_layout()
+plt.show()
+separador()
 
-#plt.xticks(rotation=45)  # opcional: rotaciona os rótulos do eixo X
-plt.tight_layout()  # ajusta o layout para evitar cortes
-
-plt.show()          # exibe o gráfico
-
-separador()          # chama função separadora (supondo que está definida)
-
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Gráfico de Pizza
-print('Gráfico de Pizza')  # informa que o próximo gráfico é de pizza
-
+print('Gráfico de Pizza')
 # Agrupando e somando vendas por região
-vendas_regiao = df.groupby('Regiao')['Vendas'].sum()  # soma total de vendas por região
+vendas_regiao = df.groupby('Regiao')['Vendas'].sum()
 
-plt.figure(figsize=(6,6))  # define o tamanho da figura
+plt.figure(figsize=(6,6))
+plt.pie(vendas_regiao, labels=vendas_regiao.index, autopct='%1.1f%%', startangle=90)
+plt.title('Proporção de Vendas por Região')
+plt.show()
+separador()
 
-# Cria gráfico de pizza com as vendas por região
-plt.pie(
-    vendas_regiao,               # valores das fatias (total de vendas)
-    labels=vendas_regiao.index,  # rótulos das fatias (regiões)
-    autopct='%1.1f%%',           # exibe porcentagem com 1 casa decimal
-    startangle=90                # inicia o gráfico girado a 90° para melhor visualização
-)
+# ráfico de Linhas
+print('Gráfico de Linhas')
 
-plt.title('Proporção de Vendas por Região')  # título do gráfico
-plt.show()                                   # exibe o gráfico
+# Agrupando vendas por mes
+vendas_mes = df.groupby('Mes')['Vendas'].sum().sort_index()
 
-separador()  # chama função separadora (supondo que está definida)
-
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Gráfico de Linhas
-print('Gráfico de Linhas')  # informa que o próximo gráfico é de linha
-
-# Agrupando vendas por mês
-vendas_mes = df.groupby('Mes')['Vendas'].sum().sort_index()  # soma total de vendas por mês e ordena pelo mês
-
-plt.figure(figsize=(10,5))  # define o tamanho da figura
-
-# Cria gráfico de linha mostrando a evolução das vendas ao longo dos meses
-plt.plot(
-    vendas_mes.index,   # eixo X (meses)
-    vendas_mes.values,  # eixo Y (total de vendas)
-    marker='o',         # adiciona marcador nos pontos
-    color='green'       # cor da linha
-)
-
-plt.title('Evolução das Vendas ao Longo dos Meses')  # título do gráfico
-plt.xlabel('Mês')                                    # rótulo do eixo X
-plt.ylabel('Total de Vendas R$')                     # rótulo do eixo Y
-
-plt.grid(True)         # adiciona linhas de grade
-plt.tight_layout()     # ajusta layout para evitar cortes
-plt.show()             # exibe o gráfico
-
-separador()            # chama função separadora (supondo que está definida)
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
+plt.figure(figsize=(10,5))
+plt.plot(vendas_mes.index, vendas_mes.values, marker='o', color='green')
+plt.title('Evolução das Vendas ao Longo dos Meses')
+plt.xlabel('Mês')
+plt.ylabel('Total de Vendas R$')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+separador()
 
 
 
