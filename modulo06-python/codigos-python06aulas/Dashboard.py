@@ -13,12 +13,16 @@ import streamlit as st             # Biblioteca para criação de aplicativos we
 
 # Define o caminho completo do arquivo CSV que será lido
 # O "r" antes da string indica que é uma *raw string* (sem necessidade de escapar as barras invertidas)
-caminho = r'E:\não copiada\cursos\Curso Bootcamp Company.e e Educ360\módulo 03 Tilha Dados\vídeos\03 Phyton\Linguagem Python - Semana 6/consultas.csv'
+# caminho = r'E:\não copiada\cursos\Curso Bootcamp Company.e e Educ360\módulo 03 Tilha Dados\vídeos\03 Phyton\Linguagem Python - Semana 6/consultas.csv'
 
 # Lê o arquivo CSV e converte automaticamente a coluna 'dataconsulta' para o formato datetime.
 # Isso permite realizar operações baseadas em data (como filtros, ordenação e gráficos de 
 # série temporal).
-df = pd.read_csv(caminho, parse_dates=['dataconsulta'])
+# df = pd.read_csv(caminho, parse_dates=['dataconsulta'])
+
+df = pd.read_csv("consultas.csv", parse_dates=['dataconsulta'])
+
+
 
 # Combo das datas
 # Cria uma lista de datas únicas presentes na coluna 'dataconsulta',
