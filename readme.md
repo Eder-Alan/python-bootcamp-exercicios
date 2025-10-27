@@ -143,3 +143,49 @@ Aprendi a tratar dados nulos de forma estratégica para cada tipo de análise.
 Desenvolvi habilidade em criar gráficos informativos e esteticamente claros usando diferentes bibliotecas de visualização.
 
 Consolidei a prática de gerar insights a partir de dados reais, visualizando tendências e distribuições importantes.
+
+
+## 🌐 Módulo 06 - Criação de Dashboards Interativos com Streamlit
+
+Neste módulo, o foco foi aprender a criar **aplicativos web interativos** para visualização de dados, utilizando a biblioteca **Streamlit**, facilitando a apresentação de insights de forma dinâmica e profissional.
+
+💡 Conceitos estudados:
+
+Streamlit: transformar scripts Python em dashboards interativos sem necessidade de HTML/CSS/JavaScript.
+
+Widgets interativos: sliders, checkboxes, dropdowns e botões para permitir filtros e ajustes em tempo real.
+
+Visualização dinâmica: integração com Matplotlib, Seaborn, Plotly e tabelas do Pandas.
+
+Upload de arquivos: permitir que o usuário carregue datasets diretamente no aplicativo.
+
+🎯 Neste módulo, o foco foi aprender a criar **dashboards interativos** utilizando **Python**, permitindo explorar dados de forma dinâmica e intuitiva através do navegador.
+
+💡 Bibliotecas estudadas:
+
+- **Pandas**: manipulação e filtragem de dados (DataFrames), leitura de CSVs e operações com datas.
+- **Plotly Express**: criação de gráficos interativos (barras, linhas, pizza) integrados ao dashboard.
+- **Streamlit**: criação de aplicativos web interativos sem necessidade de HTML/CSS/JavaScript, com suporte a widgets como `selectbox`, filtros e visualização de tabelas.
+
+🧰 Atividades desenvolvidas:
+
+1. **Leitura e tratamento de dados**:  
+   - Carregamento do dataset `consultas.csv`.  
+   - Conversão da coluna `dataconsulta` para o formato datetime.  
+   - Criação de listas únicas de datas e unidades para filtros.
+
+2. **Filtragem interativa**:  
+   - Criação de `selectbox` na barra lateral (`sidebar`) para filtrar por data e unidade.  
+   - Aplicação de filtros no DataFrame com base nas seleções do usuário.
+
+3. **Criação de gráficos e visualizações**:  
+   - Número de consultas por unidade usando `groupby` e gráficos interativos com Plotly.  
+   - Exibição do DataFrame filtrado no dashboard.  
+   - Layout configurado para ocupar toda a largura da tela (`layout='wide'`) e título personalizado da página.
+
+4. **Configuração do Streamlit**:  
+   - Definição do título do dashboard: “📊 Painel de Consultas Médicas”.  
+   - Preparação do app para execução local com:  
+
+   ```bash
+   streamlit run Dashboard.py
