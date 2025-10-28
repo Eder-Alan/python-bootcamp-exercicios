@@ -8,7 +8,7 @@ import streamlit as st             # Biblioteca para criação de aplicativos we
 
 
 # ===============================
-# Leitura do arquivo CSV
+# Leitura do arquivo CSV.
 # ===============================
 
 # Define o caminho completo do arquivo CSV que será lido
