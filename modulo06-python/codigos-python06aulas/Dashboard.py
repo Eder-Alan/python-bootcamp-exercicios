@@ -1,37 +1,70 @@
-# ===============================
-# Importação das bibliotecas
-# ===============================
+# ============================================
+# 🩺 LEITURA DO ARQUIVO CSV DE FORMA SEGURA NO STREAMLIT
+# ============================================
 
+# Importamos os módulos necessários:
+# - os → para manipular caminhos de arquivos e pastas
+# - pandas → para ler o CSV e criar o DataFrame
+# - streamlit → para mostrar mensagens na tela e interromper o app se necessário
 import os
-import pandas as pd                # Biblioteca para manipulação e análise de dados (DataFrames)
-import plotly.express as px        # Biblioteca para criação de gráficos interativos
-import streamlit as st             # Biblioteca para criação de aplicativos web interativos em Python
+import pandas as pd
+import streamlit as st
 
+# ============================================
+# 🔍 CONSTRUÇÃO DO CAMINHO CORRETO PARA O CSV
+# ============================================
 
-# ===============================
-# Leitura do arquivo CSV.
-# ===============================
-
-
-# Garante o caminho completo, independente de onde o app for iniciado
+# __file__ → representa o caminho completo deste arquivo Python (Dashboard.py)
+# os.path.dirname(__file__) → pega apenas a pasta onde este arquivo está salvo
+# os.path.join() → junta o caminho da pasta + o nome do arquivo 'consultas.csv'
+# 
+# Exemplo prático:
+# Se o arquivo estiver em:
+#   /app/python-bootcamp-exercicios/modulo06-python/codigos-python06aulas/Dashboard.py
+# Então o caminho final do CSV será:
+#   /app/python-bootcamp-exercicios/modulo06-python/codigos-python06aulas/consultas.csv
 csv_path = os.path.join(os.path.dirname(__file__), "consultas.csv")
 
+# ============================================
+# ⚠️ VERIFICA SE O ARQUIVO EXISTE
+# ============================================
+
+# Antes de tentar ler, checamos se o arquivo realmente existe.
+# Isso evita o erro "FileNotFoundError" e mostra uma mensagem amigável no app.
 if not os.path.exists(csv_path):
-    st.error(f"Arquivo '{csv_path}' não encontrado. Verifique se ele está no GitHub e tente recarregar o app.")
+    # Mostra o erro na interface do Streamlit
+    st.error(f"Arquivo '{csv_path}' não encontrado. "
+             "Verifique se ele está no GitHub e tente recarregar o app.")
+    
+    # Interrompe a execução do aplicativo para evitar falhas adiante
     st.stop()
 
+# ============================================
+# 📖 LEITURA DO ARQUIVO CSV
+# ============================================
 
-
-# Define o caminho completo do arquivo CSV que será lido
-# O "r" antes da string indica que é uma *raw string* (sem necessidade de escapar as barras invertidas)
-# caminho = r'E:\não copiada\cursos\Curso Bootcamp Company.e e Educ360\módulo 03 Tilha Dados\vídeos\03 Phyton\Linguagem Python - Semana 6/consultas.csv'
-
-# Lê o arquivo CSV e converte automaticamente a coluna 'dataconsulta' para o formato datetime.
-# Isso permite realizar operações baseadas em data (como filtros, ordenação e gráficos de 
-# série temporal).
-# df = pd.read_csv(caminho, parse_dates=['dataconsulta'])
-
+# Se o arquivo foi encontrado, fazemos a leitura normalmente.
+# O parâmetro 'parse_dates' converte automaticamente a coluna 'dataconsulta'
+# em formato de data (datetime) — ideal para gráficos e filtros.
 df = pd.read_csv(csv_path, parse_dates=['dataconsulta'])
+
+# ============================================
+# ✅ PRONTO! O DataFrame 'df' agora está carregado com segurança
+# ============================================
+
+# A partir daqui, você pode continuar o código do seu dashboard normalmente:
+# Exemplo:
+st.success("✅ Arquivo 'consultas.csv' carregado com sucesso!")
+st.dataframe(df.head())  # Mostra as primeiras linhas do CSV no Streamlit
+
+# ============================================
+# 📘 RESUMO DO QUE ESSE TRECHO FAZ
+# ============================================
+# 1️⃣ Garante que o app sempre encontre o CSV mesmo em subpastas;
+# 2️⃣ Funciona no GitHub, no Streamlit Cloud e no seu computador local;
+# 3️⃣ Evita travar o app com FileNotFoundError;
+# 4️⃣ Mostra mensagens claras para o usuário.
+
 
 
 # Combo das datas
