@@ -13,10 +13,11 @@ import streamlit as st             # Biblioteca para criação de aplicativos we
 # ===============================
 
 
-csv_path = "consultas.csv"
+# Garante o caminho completo, independente de onde o app for iniciado
+csv_path = os.path.join(os.path.dirname(__file__), "consultas.csv")
 
 if not os.path.exists(csv_path):
-    st.error(f"Arquivo '{csv_path}' não encontrado. Verifique se ele está no repositório GitHub e tente recarregar o app.")
+    st.error(f"Arquivo '{csv_path}' não encontrado. Verifique se ele está no GitHub e tente recarregar o app.")
     st.stop()
 
 
@@ -30,8 +31,7 @@ if not os.path.exists(csv_path):
 # série temporal).
 # df = pd.read_csv(caminho, parse_dates=['dataconsulta'])
 
-df = pd.read_csv("consultas.csv", parse_dates=['dataconsulta'])
-
+df = pd.read_csv(csv_path, parse_dates=['dataconsulta'])
 
 
 # Combo das datas
