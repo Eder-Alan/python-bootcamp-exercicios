@@ -2,6 +2,7 @@
 # Importação das bibliotecas
 # ===============================
 
+import os
 import pandas as pd                # Biblioteca para manipulação e análise de dados (DataFrames)
 import plotly.express as px        # Biblioteca para criação de gráficos interativos
 import streamlit as st             # Biblioteca para criação de aplicativos web interativos em Python
@@ -10,6 +11,15 @@ import streamlit as st             # Biblioteca para criação de aplicativos we
 # ===============================
 # Leitura do arquivo CSV.
 # ===============================
+
+
+csv_path = "consultas.csv"
+
+if not os.path.exists(csv_path):
+    st.error(f"Arquivo '{csv_path}' não encontrado. Verifique se ele está no repositório GitHub e tente recarregar o app.")
+    st.stop()
+
+
 
 # Define o caminho completo do arquivo CSV que será lido
 # O "r" antes da string indica que é uma *raw string* (sem necessidade de escapar as barras invertidas)
