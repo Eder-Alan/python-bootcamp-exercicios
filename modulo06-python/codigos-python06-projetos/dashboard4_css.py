@@ -53,14 +53,14 @@ if opcao_unidade != 'Todas':
 st.markdown("""
 <style>
 
-/* ====== CONTAINER GERAL DO APLICATIVO ====== */
+/* 🎨 ====== CONTAINER GERAL DO APLICATIVO ====== */
 /* Este seletor pega o "corpo" principal da página do Streamlit */
 [data-testid="stAppViewContainer"] {
     background-color: #0e1117;  /* Cor de fundo principal do app (preto-azulado escuro) */
     color: white;               /* Cor padrão do texto em toda a tela (branco) */
 }
 
-/* ====== ESTILO DOS CARDS DE RESUMO ====== */
+/* 💳 ====== ESTILO DOS CARDS DE RESUMO ====== */
 /* Tudo que tiver class="card" (como seus resumos de total de consultas) 
    vai receber este estilo visual */
 .card {
@@ -79,7 +79,7 @@ h1, h2, h3 {
     color: #00bfff;             /* Azul-ciano vibrante (destaque para títulos) */
 }
 
-/* ====== CONTAINER DAS TABELAS (DATAFRAMES) ====== */
+/* 📋 ====== CONTAINER DAS TABELAS (DATAFRAMES) ====== */
 /* Este seletor estiliza o fundo e o texto das tabelas mostradas com st.dataframe() */
 [data-testid="stDataFrameContainer"] {
     background-color: #1f2630;  /* Fundo escuro igual ao dos cards (mantém harmonia) */
@@ -121,38 +121,21 @@ df_tipo = df_filtrado.groupby('tipoconsulta', as_index=False).size().rename(colu
 df_faturamento = df_filtrado.groupby('unidade', as_index=False)['valor'].sum().rename(columns={'valor': 'faturamento'})
 
 # ================================================================
-# Exibição dos gráficos
+# 📊 Exibição dos gráficos
 # ================================================================
 st.markdown("### 📅 Análise de Consultas e Faturamento")
 
 col1, col2, col3 = st.columns(3)
 
 # 1 Gráfico de barras - Consultas por unidade
-fig1 = px.bar(
-    df_unidade,
-    x='unidade',
-    y='consultas',
-    color='unidade',
-    text='consultas',
-    title='🩺 Consultas por Unidade',
-    color_discrete_sequence=['#00bfff', '#ff6347', '#32cd32']  # cores das barras
-)
-
-# Ajusta o texto dentro ou fora das barras
-fig1.update_traces(
-    textposition='outside',  # ou 'inside' se quiser dentro das barras
-    textfont=dict(color='white', size=14)  # deixa o texto branco
-)
-
-# Ajusta o título apenas
-fig1.update_layout(
-    title=dict(
-        text='🩺 Consultas por Unidade',
-        font=dict(color='white', size=22),  # título branco
-        x=0                                 # título alinhado à esquerda
-    )
-)
-
+fig1 = px.bar(df_unidade,
+              x='unidade',
+              y='consultas',
+              color='unidade',
+              text='consultas',
+              title='🩺 Consultas por Unidade',
+              color_discrete_sequence=['#00bfff', '#ff6347', '#32cd32']
+              )
 
 # fazendo um update de layout
 fig1.update_layout(xaxis_title='Unidade', # trocando o nome do eixo X
@@ -162,51 +145,30 @@ fig1.update_layout(plot_bgcolor='#0e1117', paper_bgcolor='#0e1117', font_color='
 col1.plotly_chart(fig1, use_container_width=True)
 
 # 2 Gráfico de pizza - Consultas por tipo de consulta
-fig2 = px.pie(
-    df_tipo,
-    values='total',
-    names='tipoconsulta',
-    hole=0.4,
-    title='👨‍⚕️ Consultas por Especialidade',
-    color_discrete_sequence=['#FFD700', '#FF69B4', '#8A2BE2', '#00CED1']
-)
-
-# Ajuste apenas do título
-fig2.update_layout(
-    title=dict(
-        text='👨‍⚕️ Consultas por Especialidade',
-        font=dict(color='white', size=22),  # cor e tamanho
-        x=0                                 # título alinhado à esquerda
-    )
-)
-
+fig2 = px.pie(df_tipo,
+              values='total',
+              names='tipoconsulta',
+              hole=0.4,
+              title=f'👨‍⚕️ Consultas por Especialidade ',
+              color_discrete_sequence=['#FFD700', '#FF69B4', '#8A2BE2', '#00CED1']
+              )
 # fazendo um update de layout
+
+
 fig2.update_layout(plot_bgcolor='#0e1117', paper_bgcolor='#0e1117', font_color='white')
 col2.plotly_chart(fig2, use_container_width=True)
 
 # 3 Gráfico de barras - Faturamento por unidade
-# Criação do gráfico
-fig3 = px.bar(
-    df_faturamento,
-    x='unidade',
-    y='faturamento',
-    color='unidade',
-    text=df_faturamento['faturamento'].apply(
-        lambda x: f"R${x:,.2f}"
-        .replace(",", "X").replace(".", ",").replace("X", ".")
-    ),
-    title='🥇 Faturamento Total por Unidade',
-    color_discrete_sequence=['#00FF7F', '#FF4500', '#1E90FF']  # Cores das barras
-)
-
-# Aqui ajusta SOMENTE o título
-fig3.update_layout(
-    title=dict(
-        text='🥇 Faturamento Total por Unidade',
-        font=dict(color='white', size=22),  # cor e tamanho do título
-        x=0                                 # título alinhado à esquerda
-    )
-)
+fig3 = px.bar(df_faturamento,
+              x='unidade',
+              y='faturamento',
+              color='unidade',
+              text=df_faturamento['faturamento'].apply(
+                  lambda x: f"R${x:,.2f}"
+                  .replace(",", "X").replace(".", ",").replace("X", ".")),
+              title=f'🥇 Faturamento Total por Unidade',
+              color_discrete_sequence=['#00FF7F', '#FF4500', '#1E90FF'] # Cores das barras
+              )
 
 
 # fazendo um update de layout
