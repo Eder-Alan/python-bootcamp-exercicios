@@ -181,10 +181,11 @@ df_reabertas["responsavel"] = df_reabertas["responsavel"].astype(str).str.split(
 df_reabertas = df_reabertas.explode("responsavel")
 df_reabertas["responsavel"] = df_reabertas["responsavel"].str.strip()
 df_reabertas["tipo_de_tarefa"] = df_reabertas["tipo_de_tarefa"].astype(str).str.strip()
+df_reabertas["cliente"] = df_reabertas["cliente"].astype(str).str.strip()
 
 df_responsavel = (
     df_reabertas
-    .groupby(["responsavel", "tipo_de_tarefa"])
+    .groupby(["responsavel", "tipo_de_tarefa", "cliente"])
     .size()
     .reset_index(name="tarefas_reabertas")
     .sort_values(by=["responsavel", "tarefas_reabertas"], ascending=[True, False])
@@ -300,6 +301,7 @@ elif opcao == "Tempo Médio por Tarefas Realizadas":
 
     st.dataframe(
         df_filtrado.rename(columns={
+            "cliente": "Cliente",
             "tipo_de_tarefa": "Tipo de Tarefa",
             "responsavel": "Responsável",
             "entrega_desejada": "Entrega Desejada",
