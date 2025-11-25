@@ -34,10 +34,8 @@ if not uploaded_file:
         <div style='display: flex; justify-content: center;'>
     """, unsafe_allow_html=True)
 
-    st.image(
-        r"E:\não copiada\cursos\Curso Bootcamp Company.e e Educ360\planilha do projeto\log_da_Atlantico_digital.png",
-        width=800
-    )
+    st.image("log_da_Atlantico_digital.png", width=800)
+
 
     st.markdown("</div>", unsafe_allow_html=True)
 
