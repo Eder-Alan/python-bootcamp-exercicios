@@ -24,5 +24,8 @@ Ferramentas e entregas:
 • Publicação do código no GitHub
 
 
+
+basta baixar a base de dados no pc e ao clicar no link adicione a mesma dentro do projeto.
+
 abaixo link do Streamlit: 
 https://python-bootcamp-exercicios-eejmwbdm7ogndfnuvxkqfl.streamlit.app/
